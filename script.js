@@ -12,6 +12,8 @@ async function checkWeather(city) {
   if (response.status === 404) {
     document.querySelector(".error").style.display = "block";
     document.querySelector(".weather").style.display = "none";
+    document.querySelector(".circle1").style.top = "230px";
+    document.querySelector(".circle2").style.bottom = "150px";
   } else {
     var data = await response.json();
 
@@ -34,8 +36,11 @@ async function checkWeather(city) {
     } else if (data.weather[0].main === "Snow") {
       weatherIcon.src = "images/snow.png";
     }
+
     document.querySelector(".error").style.display = "none";
     document.querySelector(".weather").style.display = "block";
+    document.querySelector(".circle1").style.top = "410px";
+    document.querySelector(".circle2").style.bottom = "350px";
   }
 }
 
